@@ -32,12 +32,12 @@ class RestorePasswordPage(BasePage):
         restore_password_title = self.wait_and_find_element(locators.RestorePasswordLocators.RESTORE_PASSWORD_TITLE_LOCATOR)
         return restore_password_title
 
-
+    @allure.title('Нажать на кнопку показа пароля')
     def click_show_password_button(self):
         show_password_button = self.wait_and_find_element(locators.RestorePasswordLocators.SHOW_PASSWORD_BUTTON_LOCATOR)
         show_password_button.click()
 
-
+    @allure.title('Проверить, что поле ввода пароля стало активным')
     def check_password_input_is_active(self):
         active_password_input = self.wait_and_find_element(locators.RestorePasswordLocators.FOCUSED_PASSWORD_INPUT)
         return active_password_input

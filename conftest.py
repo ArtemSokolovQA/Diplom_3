@@ -33,14 +33,12 @@ def login():
 
 
 @pytest.fixture
-def login_and_create_order():
-    auth_response = requests.post(f'{config.Urls.BASE_URL}{config.Urls.LOGIN_API_PATH}', json=data.LoginData.registered_user)
+def login_and_create_order(login):
+    access_token, _ = login
 
-    access_token = auth_response.json().get('accessToken')
-    refresh_token = auth_response.json().get('refreshToken')
-    create_order_response = requests.post(f'{config.Urls.BASE_URL}{config.Urls.CREATE_ORDER_API_PATH}', json=data.CreateOrderData.create_order_data, headers={
-        'Authorization': access_token
-    })
+    create_order_response = requests.post(f'{config.Urls.BASE_URL}{config.Urls.CREATE_ORDER_API_PATH}',
+                                          json=data.CreateOrderData.create_order_data,
+                                          headers={'Authorization': access_token})
 
     order_number = create_order_response.json()['order']['number']
 

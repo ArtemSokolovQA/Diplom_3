@@ -1,7 +1,5 @@
 import allure
-
 import config
-import data
 import locators
 from pages.base_page import BasePage
 
@@ -20,7 +18,6 @@ class OrderFeedPage(BasePage):
     def click_order_card(self):
         order_card = self.wait_and_find_element(locators.OrderFeedPageLocators.ORDER_CARD_LOCATOR)
         order_card.click()
-
 
     @allure.step('Проверить, что открылось модальное окно деталей о заказе')
     def check_order_details_modal_is_opened(self):

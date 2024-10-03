@@ -1,10 +1,7 @@
 import allure
-
 import config
-import data
 import locators
 from pages.base_page import BasePage
-
 
 
 class MainPage(BasePage):
@@ -12,7 +9,6 @@ class MainPage(BasePage):
     def __init__(self, driver):
         self.driver = driver
         super().__init__(driver)
-
 
     @allure.step('Открыть главную страницу')
     def open_main_page(self):
