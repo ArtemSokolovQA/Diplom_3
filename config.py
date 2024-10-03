@@ -1,0 +1,12 @@
+class Urls:
+    BASE_URL = 'https://stellarburgers.nomoreparties.site'
+    PROFILE_PATH = '/account/profile'
+    LOGIN_PATH = '/login'
+    RESTORE_PASSWORD_PATH = '/forgot-password'
+    RESET_PASSWORD_PATH = '/reset-password'
+    PERSONAL_CABINET_PATH = '/account/profile'
+    LOGIN_API_PATH = '/api/auth/login'
+    ORDER_HISTORY_PATH = '/account/order-history'
+    CONSTRUCTOR_PATH = '/'
+    FEED_PATH = '/feed'
+    CREATE_ORDER_API_PATH = '/api/orders'
