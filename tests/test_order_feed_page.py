@@ -1,9 +1,8 @@
-import time
 import allure
 import config
 import data
 from pages.order_feed_page import OrderFeedPage
-from conftest import driver, login_and_create_order
+from conftest import driver, login_and_create_order, login
 import requests
 
 
