@@ -1,9 +1,6 @@
-import time
 import allure
 import config
-import data
-from pages.login_page import LoginPage
-from conftest import driver, login
+from conftest import driver
 from pages.main_page import MainPage
 
 

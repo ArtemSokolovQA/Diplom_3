@@ -3,9 +3,7 @@ import allure
 import config
 import data
 from pages.order_feed_page import OrderFeedPage
-from conftest import driver, login_and_create_order, login
-from pages.main_page import MainPage
-import locators
+from conftest import driver, login_and_create_order
 import requests
 
 
@@ -74,7 +72,6 @@ class TestOrderFeed:
         order_number = login_and_create_order
 
         order_feed_page.open_order_feed_page()
-        time.sleep(4)
         in_progress_orders = order_feed_page.get_in_progress_orders()
 
         assert str(order_number) in str(in_progress_orders)
