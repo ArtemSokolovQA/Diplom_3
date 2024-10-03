@@ -10,6 +10,7 @@ from pages.personal_cabinet_page import PersonalCabinetPage
 
 class TestPersonalCabinet:
 
+    @allure.title('Клик по кнопке личного кабинета в хедере ведет на страницу личного кабинета')
     def test_click_header_personal_cabinet_button_navigates_to_personal_cabinet(self, driver, login):
         personal_cabinet_page = PersonalCabinetPage(driver)
 
@@ -21,6 +22,7 @@ class TestPersonalCabinet:
         assert personal_cabinet_page.check_logout_button_appeared()
         assert personal_cabinet_page.get_current_url() == f'{config.Urls.BASE_URL}{config.Urls.PERSONAL_CABINET_PATH}'
 
+    @allure.title('Возможность перехода в раздел истории заказов пользователя')
     def test_navigation_to_orders_history_page(self, driver, login):
         personal_cabinet_page = PersonalCabinetPage(driver)
         tokens = login
@@ -32,7 +34,7 @@ class TestPersonalCabinet:
 
         assert personal_cabinet_page.get_current_url() == f'{config.Urls.BASE_URL}{config.Urls.ORDER_HISTORY_PATH}'
 
-
+    @allure.title('Возможно выйти из учетной записи нажатием по кнопке выйти в личном кабинете')
     def test_logout(self, driver, login):
         personal_cabinet_page = PersonalCabinetPage(driver)
         tokens = login

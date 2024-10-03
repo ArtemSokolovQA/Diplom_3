@@ -72,7 +72,6 @@ class TestOrderFeed:
     def test_order_number_is_presented_in_in_progress_status(self, driver, login_and_create_order):
         order_feed_page = OrderFeedPage(driver)
         order_number = login_and_create_order
-        print(order_number)
 
         order_feed_page.open_order_feed_page()
         time.sleep(4)
